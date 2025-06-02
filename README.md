@@ -59,7 +59,7 @@ npm install
   FIREBASE_PROJECT_ID=your-project-id
   FIREBASE_CLIENT_EMAIL=your-client-email
   FIREBASE_PRIVATE_KEY="your-private-key"
-  BLOCKCHAIN_NETWORK_URL=https://your-blockchain-node-url
+  BLOCKCHAIN_NETWORK_URL="https://your-blockchain-node-url"
 
 5. Run the backend server:
 
