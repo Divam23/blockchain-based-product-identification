@@ -1,6 +1,12 @@
 import admin from '../firebase/admin.js';
+import dotenv from "dotenv"
 
-const uid = 'EwW2Nmd8GtgsQJlye69CTc39FFy1'; 
+
+dotenv.config({
+    path: "./env"
+})
+
+const uid = process.env.UID; 
 
 admin.auth().setCustomUserClaims(uid, { role: 'admin' })
   .then(() => {

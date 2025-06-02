@@ -98,7 +98,7 @@ const Verification = () => {
       const product = await contract.products(productId);
       const exists = product.isRegistered;
 
-      console.log("Scanned productId: ", productId);
+      // console.log("Scanned productId: ", productId);
       console.log("Exists on chain: ", exists);
 
       setScanResult({ exists, productId, product });
