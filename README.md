@@ -40,17 +40,17 @@ This project leverages blockchain technology to create a secure and transparent 
 
 2. Install backend dependencies:
 
-```bash
-cd server
-npm install
-```
+    ```bash
+    cd server
+    npm install
+    ```
 
 3. Install frontend dependencies:
 
-```bash
-cd ../client
-npm install
-```
+    ```bash
+    cd ../client
+    npm install
+    ```
 
 4. Set up environment variables:
 
@@ -63,16 +63,16 @@ npm install
 
 5. Run the backend server:
 
-```bash
-cd ../server
-npm start
-```
+    ```bash
+    cd ../server
+    npm start
+    ```
 
 6. Run the frontend development server:
 
-```bash
-cd ../client
-npm run dev
-```
+    ```bash
+    cd ../client
+    npm run dev
+    ```
 
 7. Open your browser and visit http://localhost:5173 to see the application running.
