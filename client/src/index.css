@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: black;
+    color: white;
+}
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Minimal Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 8px; /* Thin scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a; /* Darker track */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555; /* Minimal gray scrollbar */
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #888; /* Lighter on hover */
+}

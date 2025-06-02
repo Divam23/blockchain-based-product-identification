@@ -1,0 +1,586 @@
+[{
+  
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "manufacturerAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "status",
+          "type": "bool"
+        }
+      ],
+      "name": "ManufacturerFlagged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "manufacturerAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        }
+      ],
+      "name": "ManufacturerRegistered",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "manufacturerAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "status",
+          "type": "bool"
+        }
+      ],
+      "name": "ManufacturerVerified",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "uniqueProductId",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "manufacturerAddress",
+          "type": "address"
+        }
+      ],
+      "name": "ProductRegistered",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "uniqueProductId",
+          "type": "string"
+        }
+      ],
+      "name": "ProductScanned",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "admin",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "allManufacturers",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "allProductIds",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "manufacturerAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "status",
+          "type": "bool"
+        }
+      ],
+      "name": "flagManufacturer",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAllManufacturers",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAllProducts",
+      "outputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "string",
+                  "name": "name",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "description",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "category",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "batchNumber",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "serialNumber",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "uniqueProductId",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "manufacturingDate",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "expiryDate",
+                  "type": "string"
+                }
+              ],
+              "internalType": "struct ProductRegistry.ProductDetails",
+              "name": "details",
+              "type": "tuple"
+            },
+            {
+              "internalType": "address",
+              "name": "manufacturerAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "isRegistered",
+              "type": "bool"
+            },
+            {
+              "internalType": "uint256",
+              "name": "scanCount",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct ProductRegistry.Product[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "manufacturer",
+          "type": "address"
+        }
+      ],
+      "name": "getManufacturerProducts",
+      "outputs": [
+        {
+          "internalType": "string[]",
+          "name": "",
+          "type": "string[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getRequestedManufacturers",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getStats",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "totalManufacturers",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "verifiedCount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "flaggedCount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "totalProductsScanned",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "manufacturers",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "manufacturingLocation",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "email",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "phone",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "facilityAddress",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "isVerified",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "isFlagged",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "requestedVerification",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "name": "products",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "description",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "category",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "batchNumber",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "serialNumber",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "uniqueProductId",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "manufacturingDate",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "expiryDate",
+              "type": "string"
+            }
+          ],
+          "internalType": "struct ProductRegistry.ProductDetails",
+          "name": "details",
+          "type": "tuple"
+        },
+        {
+          "internalType": "address",
+          "name": "manufacturerAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "isRegistered",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "scanCount",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_manufacturingLocation",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_email",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_phone",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_facilityAddress",
+          "type": "string"
+        }
+      ],
+      "name": "registerManufacturer",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "description",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "category",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "batchNumber",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "serialNumber",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "uniqueProductId",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "manufacturingDate",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "expiryDate",
+              "type": "string"
+            }
+          ],
+          "internalType": "struct ProductRegistry.ProductDetails",
+          "name": "productDetails",
+          "type": "tuple"
+        }
+      ],
+      "name": "registerProduct",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "requestVerification",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "productId",
+          "type": "string"
+        }
+      ],
+      "name": "scanProduct",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "manufacturerAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "status",
+          "type": "bool"
+        }
+      ],
+      "name": "verifyManufacturer",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ]
+
+}]
